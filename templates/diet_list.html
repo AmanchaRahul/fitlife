@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Diet Plans</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Diet Plans</h1>
+    <ul>
+        {% for diet in diet_plans %}
+        <li>
+            <h3>{{ diet.title }}</h3>
+            <p>{{ diet.category }}</p>
+            <img src="{{ diet.image.url }}" alt="{{ diet.title }}">
+            <p>{{ diet.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="back-link" href="{% url 'home' %}">Back to Home</a>
+</div>
+{% endblock %}

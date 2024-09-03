@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>base</title>
+    {% endblock %}
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}"> <!-- New CSS -->
+    <link rel="stylesheet" href="{% static 'css/workout_list_style.css' %}"> <!-- New CSS -->
+    <link rel="stylesheet" href="{% static 'css/diet_list_style.css' %}"> <!-- New CSS -->
+
+</head>
+<body>
+    {% block content %}
+    
+    {% endblock %}
+
+
+    <script src= "{% static 'js/bootstrap.js' %}"></script>
+    <script src= "{% static 'js/jquery.js' %}"></script>
+    <script src= "{% static 'js/popper.js' %}"></script>
+
+</body>
+</html>

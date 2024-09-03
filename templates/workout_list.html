@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Workouts</title>
+{% endblock %}
+    
+{% block content %}
+<div class="container">
+    <h1>Workouts</h1>
+    <ul>
+        {% for workout in workouts %}
+        <li>
+            <a href="{% url 'workout_detail' workout.id %}">{{ workout.title }}</a>
+            - {{ workout.category }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="back-link" href="{% url 'home' %}">Back to Home</a>
+</div>
+{% endblock %}

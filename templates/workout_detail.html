@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ workout.title }}</title>
+{% endblock %}
+    
+{% block content %}
+<div class="content-container">
+    <h1>{{ workout.title }}</h1>
+    <p>{{ workout.description }}</p>
+    <p>Category: {{ workout.category }}</p>
+
+    <h3>Exercises</h3>
+    <ul class="exercise-list">
+        {% for exercise in workout.exercises.all %}
+            <li class="exercise-item">
+                <strong>{{ exercise.name }}</strong>: {{ exercise.description }}
+
+                {% if exercise.video_url %}
+                    <br>
+                    <video class="exercise-video" controls>
+                        <source src="{{ exercise.video_url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="back-link" href="{% url 'workout_list' %}">Back to Workouts</a>
+</div>
+{% endblock %}
