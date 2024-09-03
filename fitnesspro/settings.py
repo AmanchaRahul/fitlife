@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fs3d++-#5wkqht!vgr1-$+9u$l(e#u333gf%zu!98a8da5ld4t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://fitlif.onrender.com']]
 
 
 # Application definition
