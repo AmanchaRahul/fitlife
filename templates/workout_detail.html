@@ -5,20 +5,20 @@
 {% endblock %}
     
 {% block content %}
-<div class="content-container">
-    <h1>{{ workout.title }}</h1>
-    <p>{{ workout.description }}</p>
-    <p>Category: {{ workout.category }}</p>
+<div class="container-fluid px-3 py-5">
+    <h1 class="text-center mb-4">{{ workout.title }}</h1>
+    <p class="text-muted">{{ workout.description }}</p>
+    <p class="font-weight-bold">Category: {{ workout.category }}</p>
 
-    <h3>Exercises</h3>
-    <ul class="exercise-list">
+    <h3 class="mt-4">Exercises</h3>
+    <ul class="list-unstyled">
         {% for exercise in workout.exercises.all %}
-            <li class="exercise-item">
+            <li class="mb-4 p-3 border rounded shadow-sm">
                 <strong>{{ exercise.name }}</strong>: {{ exercise.description }}
 
                 {% if exercise.video_url %}
                     <br>
-                    <video class="exercise-video" controls>
+                    <video class="exercise-video img-fluid mt-2" controls>
                         <source src="{{ exercise.video_url }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -26,6 +26,8 @@
             </li>
         {% endfor %}
     </ul>
-    <a class="back-link" href="{% url 'workout_list' %}">Back to Workouts</a>
+    <div class="text-center mt-4">
+        <a class="btn btn-secondary" href="{% url 'workout_list' %}">Back to Workouts</a>
+    </div>
 </div>
 {% endblock %}

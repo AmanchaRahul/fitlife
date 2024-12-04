@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Welcome to the FITLIFE</h1>
-    <div class="nav-links">
-        <a href="{% url 'workout_list' %}">Workouts</a> | 
-        <a href="{% url 'diet_list' %}">Diet Plans</a>
+<div class="container text-center py-5">
+    <h1 class="mb-4">Welcome to FITLIFE</h1>
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+        <a href="{% url 'workout_list' %}" class="btn btn-primary">Workouts</a>
+        <a href="{% url 'diet_list' %}" class="btn btn-success">Diet Plans</a>
     </div>
 </div>
 {% endblock %}

@@ -5,18 +5,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Diet Plans</h1>
-    <ul>
+<div class="container-fluid px-3 py-5">
+    <h1 class="text-center mb-4">Diet Plans</h1>
+    <ul class="list-unstyled">
         {% for diet in diet_plans %}
-        <li>
+        <li class="mb-4 p-3 border rounded shadow-sm">
             <h3>{{ diet.title }}</h3>
-            <p>{{ diet.category }}</p>
-            <img src="{{ diet.image.url }}" alt="{{ diet.title }}">
+            <p class="text-muted">{{ diet.category }}</p>
+            <img src="{{ diet.image.url }}" alt="{{ diet.title }}" class="img-fluid mb-3">
             <p>{{ diet.description }}</p>
         </li>
         {% endfor %}
     </ul>
-    <a class="back-link" href="{% url 'home' %}">Back to Home</a>
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{% url 'home' %}">Back to Home</a>
+    </div>
 </div>
 {% endblock %}
+
