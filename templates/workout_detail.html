@@ -6,8 +6,12 @@
     
 {% block content %}
 <div class="container-fluid px-3 py-5">
-    <h1 class="text-center mb-4">{{ workout.title }}</h1>
-    <p class="text-muted">{{ workout.description }}</p>
+    <!-- Ensure heading is within bounds and adjusts for smaller screens -->
+    <h1 class="text-center mb-4 text-wrap">{{ workout.title }}</h1>
+    
+    <!-- Modify text-muted to improve readability, adjust text color -->
+    <p class="text-dark">{{ workout.description }}</p>
+    
     <p class="font-weight-bold">Category: {{ workout.category }}</p>
 
     <h3 class="mt-4">Exercises</h3>
