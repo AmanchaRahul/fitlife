@@ -22,8 +22,8 @@ body {
     border-radius: 8px;
 }
 
-p {
-    font-size: 3rem; /* Default for desktop */
+h1 {
+    font-size: 1.5rem; /* Default for desktop */
 }
 
 /* Adjust heading size on smaller devices */
